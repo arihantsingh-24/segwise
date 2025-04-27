@@ -29,7 +29,7 @@ const Page = () => {
   const addTag = (tag: string) => {
     setSelectedTags(tag);
   };
-  
+
   const addMetric = (metric: string) => {
     setSelectedMetrics(metric);
   };
@@ -43,13 +43,12 @@ const Page = () => {
   };
 
   const TagOption = (metricoption: string) => {
-    setSelectedMetricsOption(metricoption);
+    setSelectedTagsOption(metricoption);
   };
 
-  const metricOtion = (tagoption: string) => {
-    setSelectedTags(tagoption);
+  const metricOption = (tagoption: string) => {
+    setSelectedMetricsOption(tagoption);
   };
-
 
   const [isTagOpen, setIsTagOpen] = useState(false);
   const toggleTagDropdown = () => {
@@ -162,7 +161,10 @@ const Page = () => {
                         <FaCaretRight className="text-gray-400" />
                         <p className="text-xs text-gray-600">{selectedTags}</p>
 
-                        <button className="ml-auto text-gray-400 hover:text-red-500 transition-colors duration-200" onClick={() => deleteTag()}>
+                        <button
+                          className="ml-auto text-gray-400 hover:text-red-500 transition-colors duration-200"
+                          onClick={() => deleteTag()}
+                        >
                           🗑️
                         </button>
                       </div>
@@ -243,7 +245,10 @@ const Page = () => {
                           {selectedMetrics}
                         </p>
 
-                        <button className="ml-auto text-gray-400 hover:text-red-500 transition-colors duration-200" onClick={() => deleteMetric()}>
+                        <button
+                          className="ml-auto text-gray-400 hover:text-red-500 transition-colors duration-200"
+                          onClick={() => deleteMetric()}
+                        >
                           🗑️
                         </button>
                       </div>
@@ -274,7 +279,8 @@ const Page = () => {
                               (option) => (
                                 <div
                                   key={option}
-                                  onClick={() => metricOtion(option)}
+                                  onClick={() => metricOption(option)}
+                                  
                                   className="p-2 hover:bg-gray-100 cursor-pointer text-[14px]"
                                 >
                                   {option}
