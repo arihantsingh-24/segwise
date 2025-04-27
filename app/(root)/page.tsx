@@ -108,49 +108,6 @@ const Page = () => {
                   <div className={`w-22 border-b border-gray-300 pb-1`}></div>
                 </div>
 
-                {/* List of filters */}
-                <div className="flex">
-                  {selectedFilters === "Tags" && (
-                    <ul className="flex flex-col space-y-1">
-                      {[
-                        "creative_name",
-                        "country",
-                        "Ad network",
-                        "CTA Position",
-                        "CTA Text",
-                      ].map((tag) => (
-                        <li
-                          key={tag}
-                          onClick={() => addTag(tag)}
-                          className="text-[14px] text-gray-800 font-[400] hover:bg-gray-100 p-1 rounded-md cursor-pointer"
-                        >
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {selectedFilters === "Metrics" && (
-                    <ul className="flex flex-col space-y-1">
-                      {[
-                        "spend",
-                        "impressions",
-                        "clicks",
-                        "cost_per_click",
-                        "cost_per_install",
-                        "installs",
-                      ].map((metric) => (
-                        <li
-                          key={metric}
-                          onClick={() => addMetric(metric)}
-                          className="text-[14px] text-gray-800 font-[400] hover:bg-gray-100 p-1 rounded-md cursor-pointer"
-                        >
-                          {metric}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-
                 <div className="flex flex-col w-full items-center mt-2 space-y-6">
                   {/* tags*/}
                   {selectedTags !== null && (
@@ -280,7 +237,6 @@ const Page = () => {
                                 <div
                                   key={option}
                                   onClick={() => metricOption(option)}
-                                  
                                   className="p-2 hover:bg-gray-100 cursor-pointer text-[14px]"
                                 >
                                   {option}
@@ -291,6 +247,49 @@ const Page = () => {
                         )}
                       </div>
                     </div>
+                  )}
+                </div>
+
+                {/* List of filters */}
+                <div className="flex">
+                  {selectedFilters === "Tags" && (
+                    <ul className="flex flex-col space-y-1">
+                      {[
+                        "creative_name",
+                        "country",
+                        "Ad network",
+                        "CTA Position",
+                        "CTA Text",
+                      ].map((tag) => (
+                        <li
+                          key={tag}
+                          onClick={() => addTag(tag)}
+                          className="text-[14px] text-gray-800 font-[400] hover:bg-gray-100 p-1 rounded-md cursor-pointer"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {selectedFilters === "Metrics" && (
+                    <ul className="flex flex-col space-y-1">
+                      {[
+                        "spend",
+                        "impressions",
+                        "clicks",
+                        "cost_per_click",
+                        "cost_per_install",
+                        "installs",
+                      ].map((metric) => (
+                        <li
+                          key={metric}
+                          onClick={() => addMetric(metric)}
+                          className="text-[14px] text-gray-800 font-[400] hover:bg-gray-100 p-1 rounded-md cursor-pointer"
+                        >
+                          {metric}
+                        </li>
+                      ))}
+                    </ul>
                   )}
                 </div>
               </div>
