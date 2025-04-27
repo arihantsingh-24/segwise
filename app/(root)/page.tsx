@@ -16,7 +16,10 @@ const Page = () => {
     "lesser than"
   );
   const [isOr, setIsOr] = useState(false);
-  const [selectedValue, setSelectedValue] = useState("value");
+
+   const handleFilter = () => {
+    setFiltered(!filtered);
+  };
 
   const handleOrChange = () => {
     setIsOr(!isOr);
@@ -69,7 +72,7 @@ const Page = () => {
       {/* Main Content Card */}
       <div className="flex flex-col items-center justify-center h-full w-full border-dashed border-2 border-[#000]/12">
         {/* Filter Header */}
-        <div className="flex flex-col items-start justify-center w-[943px] h-[68px] bg-[#F5F8FA] rounded-[16px] border-gray-200 border-1 mt-8 mb-8">
+        <div className="flex flex-col items-start justify-center w-[943px] h-[68px] bg-[#F5F8FA] rounded-[16px] border-gray-200 border-1 mt-8 mb-8" onClick={handleFilter}>
           <button
             className="flex ml-10 bg-white hover:bg-[#E4FE77]/50 items-center justify-evenly w-auto h-[36px] gap-1 p-2 rounded-md border-gray-200 border-1 shadow-gray-200 shadow-sm"
             onClick={toggleDropdown}
